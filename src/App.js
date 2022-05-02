@@ -9,14 +9,13 @@ function App() {
   return (
     <Wrapper>
       <GlobalStyle />
-      <Home />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gods" element={<Gods />} />
         <Route path="/abbr" element={<Abbr />} />
         <Route path="/surname" element={<Surname />} />
         <Route path="/organization" element={<Organization />} />
-      </Routes> */}
+      </Routes>
     </Wrapper>
   );
 }

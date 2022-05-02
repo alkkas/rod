@@ -43,7 +43,7 @@ const LinkMixin = (beforeWidth, beforeHeight) => css`
     background: ${colors.red};
   }
 `;
-const Loading = styled(motion.div)``;
+
 const Wrapper = styled.div`
   min-height: 100vh;
   background: ${colors.black};
@@ -183,5 +183,4 @@ export {
   Small,
   colors,
   LinkMixin,
-  Loading,
 };

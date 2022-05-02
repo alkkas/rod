@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container, Loading } from "@components/GlobalStyles.styles";
-import { Header, Content } from "@components";
+import { Container } from "@components/GlobalStyles.styles";
+import { Header, Content, Loading } from "@components";
 import { getOrganizations } from "@services";
 import { OrganizationsList, OrganizationItem } from "./Organization.styles";
 
