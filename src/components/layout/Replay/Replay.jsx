@@ -2,7 +2,8 @@ import React from "react";
 import { ReplayButton } from "./Replay.styles";
 export default function Replay(props) {
   function handleClick() {
-    props.changeFrame(1);
+    localStorage.setItem("frame", JSON.stringify(1));
+    window.location.reload();
   }
   return props.frame == 3 ? (
     <ReplayButton onClick={handleClick}>Повторить анимацию</ReplayButton>

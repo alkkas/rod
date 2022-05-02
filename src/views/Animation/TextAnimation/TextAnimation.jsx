@@ -62,6 +62,7 @@ export function TextAnimation(props) {
         "transition": { delay: 0.5, duration: 1.3 },
       }));
     })();
+    localStorage.setItem("frame", JSON.stringify(3));
     props.changeFrame(3);
   };
 
