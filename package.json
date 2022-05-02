@@ -1,0 +1,43 @@
+{
+  "name": "rod",
+  "version": "1.0.0",
+  "description": "default webpack-react-babel bundle",
+  "main": "index.js",
+  "homepage": "file:///D:/learning/rod/dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "npx eslint src/components/"
+  },
+  "author": "alkkas",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.17.9",
+    "framer-motion": "^6.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.4",
+    "@babel/plugin-proposal-throw-expressions": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@svgr/webpack": "^6.2.1",
+    "babel-loader": "^8.2.3",
+    "element-closest-polyfill": "^1.0.4",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-react": "^7.29.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "2.5.1",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
+  },
+  "sideEffects": false
+}
