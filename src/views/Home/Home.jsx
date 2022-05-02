@@ -12,7 +12,7 @@ import { Logo, Replay } from "@components";
 import { LogoAnimation, TextAnimation } from "@views/Animation";
 
 export default function Home() {
-  const [frame, setFrame] = useState(3);
+  const [frame, setFrame] = useState(1);
   const logo = useRef(null);
 
   return (
