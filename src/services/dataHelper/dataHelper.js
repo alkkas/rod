@@ -25,7 +25,7 @@ function getOrganizations() {
 function getAbbr() {
   const abbrs = {
     1: {
-      name: "Русскоязычное объединение Дань",
+      name: "Русскоязычное объединение Дать",
       data: {
         1: {
           name: "Добро",

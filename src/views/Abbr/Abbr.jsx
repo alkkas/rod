@@ -16,7 +16,9 @@ export default function Abbr() {
   const [data, setData] = useState({});
   const [active, setActive] = useState(false);
   const [currentWord, setCurrentWord] = useState({});
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(
+    parseFloat(localStorage.getItem("count")) || 1
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,8 +30,11 @@ export default function Abbr() {
     fetchData().catch(console.error);
   });
 
-  function handleClick(item, subItem) {
-    setCount((count) => count + 1);
+  function handleClick(item, subItem, index) {
+    if (!(index + 1 < count)) {
+      setCount((count) => count + 1);
+      localStorage.setItem("count", JSON.stringify(count + 1));
+    }
     setCurrentWord({
       name: data[item].data[subItem].name,
       desc: data[item].data[subItem].desc,
@@ -57,7 +62,7 @@ export default function Abbr() {
                         <AbbrSubItem key={subItem}>
                           Д -{" "}
                           <AbbrLink
-                            onClick={() => handleClick(item, subItem)}
+                            onClick={() => handleClick(item, subItem, index)}
                             visited={index + 1 != count ? true : false}
                           >
                             {" "}

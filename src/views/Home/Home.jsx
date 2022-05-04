@@ -8,7 +8,7 @@ import {
   HomeContainer,
   HomeHeader,
 } from "./Home.styles";
-import { Logo, Replay } from "@components";
+import { Logo, Replay, Background } from "@components";
 import { LogoAnimation, TextAnimation } from "@views/Animation";
 
 export default function Home() {
@@ -28,6 +28,7 @@ export default function Home() {
         <Logo frame={frame} changeFrame={setFrame} ref={logo} />
         <Replay frame={frame} changeFrame={setFrame} />
       </HomeHeader>
+      <Background frame={frame} />
       <LogoAnimation frame={frame} changeFrame={setFrame} element={logo} />
       <TextAnimation frame={frame} changeFrame={setFrame} element={logo} />
 

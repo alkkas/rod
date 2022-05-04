@@ -1,12 +1,12 @@
 import styled from "styled-components";
-
-const SurnameTitle = styled.h1`
-  font-size: 1rem;
-  text-align: center;
-  margin: 50px 0 0;
-  & span {
-    font-weight: 400;
-  }
+import { colors, LinkMixin } from "@components/GlobalStyles.styles";
+import { motion } from "framer-motion";
+const SurnameList = styled(motion.ul)`
+  padding-left: 50px;
 `;
-
-export { SurnameTitle };
+const SurnameItem = styled.a`
+  font-size: 40px;
+  ${LinkMixin(40, 7)}
+  margin: 25px 0;
+`;
+export { SurnameList, SurnameItem };
