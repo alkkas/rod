@@ -16,8 +16,9 @@ const LargeText = styled(Large)`
 `;
 const WhiteText = styled(motion.h1)`
   position: absolute;
-  left: 100%;
-  top: -0px;
+  left: ${(props) => (props.before ? 0 : "100%")};
+  transform: ${(props) => (props.before ? "translateX(-100%)" : "unset")};
+  top: 0px;
   color: ${colors.white};
   font-size: 2.5rem;
 `;

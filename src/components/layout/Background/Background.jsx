@@ -4,9 +4,9 @@ import BackgroundItem from "./BackgroundItem";
 import { createSymbols } from "@services";
 
 function Background(props) {
-  const size = 70;
+  const size = window.innerWidth <= 768 ? 40 : 70;
   const symbols = createSymbols(
-    70,
+    window.innerWidth <= 768 ? 20 : 70,
     window.innerWidth,
     window.innerHeight,
     size

@@ -13,6 +13,13 @@ const LogoWrapper = styled(motion.div)`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media screen and (max-width: 1366px) {
+    width: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100px;
+  }
 `;
 const StyledLogo = styled(Logo)`
   width: 100%;

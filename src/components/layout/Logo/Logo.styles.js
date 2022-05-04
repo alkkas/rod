@@ -7,6 +7,15 @@ const LogoSmall = styled(Small)`
   font-size: 40px;
   opacity: ${(props) => (props.frame == 3 ? 1 : 0)};
   font-weight: 900;
+  @media screen and (max-width: 1366px) {
+    font-size: 32px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 16px;
+  }
 `;
 
 const LogoImgStyled = styled(LogoImg)`
@@ -29,5 +38,11 @@ const LogoWrapper = styled(motion.section)`
     }
     return 0;
   }};
+  @media screen and (max-width: 1366px) {
+    max-width: 60px;
+  }
+  @media screen and (max-width: 360px) {
+    width: 30px;
+  }
 `;
 export { LogoWrapper, LogoSmall, LogoImgStyled };

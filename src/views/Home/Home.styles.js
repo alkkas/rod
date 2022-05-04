@@ -5,6 +5,12 @@ import { motion } from "framer-motion";
 
 const HomeWrapper = styled(motion.section)`
   margin: 1rem 2rem 0;
+  @media screen and (max-width: 768px) {
+    margin: 5rem 0 0;
+  }
+  @media screen and (max-width: 360px) {
+    margin: 11rem 0 0;
+  }
 `;
 const HomeList = styled.nav`
   margin-left: 1.5rem;
@@ -28,5 +34,9 @@ const HomeContainer = styled(Container)`
 const HomeListItem = styled(Link)`
   font-size: 1.7rem;
   ${LinkMixin(50, 15)}
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
 `;
 export { HomeContainer, HomeWrapper, HomeList, HomeListItem, HomeHeader };

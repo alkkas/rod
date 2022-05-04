@@ -3,6 +3,7 @@ import { StyledLogo, LogoWrapper } from "./LogoAnimation.styles";
 
 function LogoAnimation(props) {
   const elemCoordinates = props.element.current?.getBoundingClientRect() || {};
+  const elemWidth = props.element.current?.offsetWidth;
   const [state, setState] = useState({ top: 0, left: 0, frame: props.frame });
   const duration = 1300;
   let initialLeft;
@@ -22,7 +23,7 @@ function LogoAnimation(props) {
     hidden: {
       top: elemCoordinates.top,
       left: elemCoordinates.left,
-      width: 88,
+      width: elemWidth,
     },
   };
 

@@ -18,6 +18,14 @@ const StyledArrow = styled(Arrow)`
   * > path {
     fill: ${colors.red};
   }
+  @media screen and (max-width: 768px) {
+    width: 33px;
+    margin-right: 15px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 20px;
+    margin-right: 10px;
+  }
 `;
 const HeaderFlexItem = styled.li`
   width: 33.333%;
@@ -27,6 +35,7 @@ const HeaderFlexItem = styled.li`
 const Back = styled(Link)`
   color: ${colors.white};
   display: flex;
+  align-items: center;
   &:hover {
     svg {
       transform: translateX(-10px);

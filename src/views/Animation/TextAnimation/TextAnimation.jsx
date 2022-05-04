@@ -26,8 +26,8 @@ export function TextAnimation(props) {
     },
     {
       top: "75%",
-      left: "75%",
-      text: "НИК",
+      left: "95%",
+      text: "НА",
     },
   ];
 
@@ -58,7 +58,9 @@ export function TextAnimation(props) {
         transition: { delay: 0.5, duration: 1.3 },
       }));
       return controls.start((i) => ({
-        "font-size": "40px",
+        "font-size": elementCoords
+          ? getComputedStyle(elementCoords).fontSize
+          : "",
         "transition": { delay: 0.5, duration: 1.3 },
       }));
     })();
@@ -93,7 +95,11 @@ export function TextAnimation(props) {
             animate={controls}
           >
             РОД{" "}
-            <WhiteText inital={{ opacity: 1 }} animate={whiteTextOpacity}>
+            <WhiteText
+              inital={{ opacity: 1 }}
+              animate={whiteTextOpacity}
+              before={index == 2}
+            >
               {item.text}
             </WhiteText>
           </LargeText>

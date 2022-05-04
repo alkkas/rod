@@ -42,6 +42,26 @@ const LinkMixin = (beforeWidth, beforeHeight) => css`
     z-index: -1;
     background: ${colors.red};
   }
+  @media screen and (max-width: 1336px) {
+    &::before {
+      width: ${beforeWidth - 10}px;
+      height: ${beforeHeight - 5}px;
+      left: -40px;
+    }
+    &:hover::before {
+      left: -50px;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    &::before {
+      width: ${beforeWidth - 20}px;
+      height: ${beforeHeight - 10}px;
+      left: -30px;
+    }
+    &:hover::before {
+      left: -40px;
+    }
+  }
 `;
 
 const Wrapper = styled.div`

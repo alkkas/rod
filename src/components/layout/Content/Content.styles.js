@@ -16,11 +16,17 @@ const Grid = styled(Tree)`
   left: ${(props) => (props.left === 0 ? props.left : "unset")};
   bottom: ${(props) => (props.bottom === 0 ? props.bottom : "unset")};
   right: ${(props) => (props.right === 0 ? props.right : "unset")};
-
+  @media screen and (max-width: 1366px) {
+    width: 35px;
+  }
+  @media screen and (max-width: 360px) {
+    width: 20px;
+  }
   * > path {
     fill: ${colors.white};
   }
 `;
+
 const HorizontalLines = styled.div`
   &::before,
   &::after {
@@ -38,6 +44,30 @@ const HorizontalLines = styled.div`
     top: unset;
     bottom: 25px;
   }
+  @media screen and (max-width: 1366px) {
+    &::before,
+    &::after {
+      width: calc(100% - 100px);
+      top: 15px;
+    }
+    &::after {
+      top: unset;
+      bottom: 15px;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    &::before,
+    &::after {
+      height: 1px;
+      width: calc(100% - 70px);
+      top: 7px;
+    }
+    &::after {
+      top: unset;
+      bottom: 7px;
+    }
+  }
 `;
 
 const VerticalLines = styled.div`
@@ -47,7 +77,6 @@ const VerticalLines = styled.div`
     display: block;
     width: 3px;
     position: absolute;
-
     height: calc(100% - 120px);
     left: 25px;
     top: 50%;
@@ -57,6 +86,29 @@ const VerticalLines = styled.div`
   &::after {
     left: unset;
     right: 25px;
+  }
+  @media screen and (max-width: 1366px) {
+    &::before,
+    &::after {
+      height: calc(100% - 100px);
+      left: 15px;
+    }
+    &::after {
+      left: unset;
+      right: 15px;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    &::before,
+    &::after {
+      width: 1px;
+      height: calc(100% - 70px);
+      left: 9px;
+    }
+    &::after {
+      left: unset;
+      right: 9px;
+    }
   }
 `;
 const ContentBorder = styled.div`
