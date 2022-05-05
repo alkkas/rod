@@ -12,5 +12,8 @@ const ReplayButton = styled.button`
   &:hover {
     opacity: 1;
   }
+  @media screen and (max-width: 360px) {
+    font-size: 0.8rem;
+  }
 `;
 export { ReplayButton };

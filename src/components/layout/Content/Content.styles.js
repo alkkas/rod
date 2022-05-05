@@ -6,7 +6,7 @@ import { colors } from "@components/GlobalStyles.styles";
 const ContentWrapper = styled(motion.section)`
   padding: 55px;
   position: relative;
-  min-height: 500px;
+  flex-grow: 1;
   margin-top: 40px;
   @media screen and (max-width: 768px) {
     padding: 30px;

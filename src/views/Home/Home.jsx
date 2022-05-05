@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* home component*/}
       <HomeWrapper
-        animate={frame === 3 ? { opacity: 1, display: "block" } : {}}
+        animate={frame === 3 ? { opacity: 1, display: "flex" } : {}}
         initial={{ opacity: 0, display: "none" }}
         transition={{ duration: 1.3 }}
       >

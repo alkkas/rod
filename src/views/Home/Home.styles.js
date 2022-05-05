@@ -5,11 +5,16 @@ import { motion } from "framer-motion";
 
 const HomeWrapper = styled(motion.section)`
   margin: 1rem 2rem 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
   @media screen and (max-width: 768px) {
     margin: 5rem 0 0;
   }
   @media screen and (max-width: 360px) {
-    margin: 11rem 0 0;
+    margin: 0;
   }
 `;
 const HomeList = styled.nav`
