@@ -18,7 +18,7 @@ function getOrganizations() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(organizations);
-    }, 2000);
+    }, 0);
   });
 }
 
@@ -50,7 +50,7 @@ function getAbbr() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(abbrs);
-    }, 2000);
+    }, 0);
   });
 }
 export { getOrganizations, getAbbr };
