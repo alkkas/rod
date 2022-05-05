@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   HomeList,
@@ -16,7 +15,9 @@ export default function Home() {
     parseFloat(localStorage.getItem("frame")) || 1
   );
   const logo = useRef(null);
-
+  useEffect(() => {
+    document.title = "РОД";
+  });
   return (
     <HomeContainer>
       {/* animation frames */}

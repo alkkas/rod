@@ -8,6 +8,12 @@ const ContentWrapper = styled(motion.section)`
   position: relative;
   min-height: 500px;
   margin-top: 40px;
+  @media screen and (max-width: 768px) {
+    padding: 30px;
+  }
+  @media screen and (max-width: 360px) {
+    padding: 20px;
+  }
 `;
 const Grid = styled(Tree)`
   position: absolute;

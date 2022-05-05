@@ -5,6 +5,9 @@ import { getOrganizations } from "@services";
 import { OrganizationTitle } from "./Organization.styles";
 
 export default function Organization() {
+  useEffect(() => {
+    document.title = "РОД - Организация";
+  });
   return (
     <Container>
       <Header section="ОРГАНИЗАЦИЯ" />

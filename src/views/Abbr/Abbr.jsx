@@ -21,6 +21,7 @@ export default function Abbr() {
   );
 
   useEffect(() => {
+    document.title = "РОД - Аббревиатура";
     const fetchData = async () => {
       const data = await getAbbr();
 
@@ -42,6 +43,7 @@ export default function Abbr() {
     setActive(true);
     disableScroll();
   }
+
   return (
     <Container>
       <Header section="АББРЕВИАТУРА" />

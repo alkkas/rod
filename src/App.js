@@ -4,10 +4,13 @@ import { hot } from "react-hot-loader/root";
 import { GlobalStyle, Wrapper } from "@components/GlobalStyles.styles";
 import { Home, Abbr, Gods, Surname, Organization } from "@views";
 import { Routes, Route } from "react-router-dom";
+import favicon from "@assets/img/favicon.ico";
+import Favicon from "react-favicon";
 
 function App() {
   return (
     <Wrapper>
+      <Favicon url={favicon} />
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Home />} />

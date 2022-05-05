@@ -6,6 +6,9 @@ const LoadingWrapper = styled(motion.div)`
   margin: auto;
   max-width: 70px;
   margin-top: 100px;
+  @media screen and (max-width: 768px) {
+    max-width: 40px;
+  }
 `;
 const StyledLoadingPic = styled(LoadingPic)`
   width: 100%;

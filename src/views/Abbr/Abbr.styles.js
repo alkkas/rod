@@ -7,6 +7,12 @@ const AbbrList = styled(motion.ol)`
   list-style: none;
   counter-reset: my-counter;
   padding: 40px 90px;
+  @media screen and (max-width: 768px) {
+    padding: 30px 40px;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 30px 25px;
+  }
 `;
 const AbbrItem = styled.li`
   counter-increment: my-counter;
@@ -26,12 +32,30 @@ const AbbrItemTitle = styled.h1`
     color: ${colors.red};
     font-weight: bold;
   }
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    &::before {
+      top: 8px;
+      left: -25px;
+      font-size: 1.5rem;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 1rem;
+    &::before {
+      top: 8px;
+      font-size: 1.5rem;
+    }
+  }
 `;
 const AbbrSubItem = styled.li`
   color: ${colors.green};
   margin: 10px 0;
   font-weight: 800;
   font-size: 1.5rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 const AbbrLink = styled.button`
   cursor: pointer;
@@ -45,6 +69,9 @@ const AbbrLink = styled.button`
   font-size: 1rem;
   &:hover {
     opacity: 0.6;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
   }
 `;
 
@@ -60,7 +87,7 @@ const AbbrPopUpWrapper = styled(motion.article)`
 const AbbrPopUpContent = styled.div`
   border-radius: 15px;
   width: 60%;
-  min-height: 60%;
+  height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -68,6 +95,10 @@ const AbbrPopUpContent = styled.div`
   transform: translate(-50%, -50%);
   background: ${colors.black};
   color: ${colors.white};
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+    width: 80%;
+  }
 `;
 const AbbrCloseWrapper = styled.div`
   width: 58px;
@@ -75,12 +106,31 @@ const AbbrCloseWrapper = styled.div`
   top: 40px;
   right: 40px;
   cursor: pointer;
+  @media screen and (max-width: 768px) {
+    width: 40px;
+    top: 20px;
+    right: 20px;
+  }
+  @media screen and (max-width: 360px) {
+    width: 30px;
+    top: 20px;
+    right: 20px;
+  }
 `;
 const AbbrPopUpClose = styled(Close)`
   width: 100%;
 `;
 const AbbrPopUpTitle = styled(Medium)`
   margin-bottom: 2rem;
+  line-height: 58px;
+  @media screen and (max-width: 768px) {
+    font-size: 1.7rem;
+    line-height: 40px;
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 1.7rem;
+    line-height: 30px;
+  }
 `;
 export {
   AbbrList,

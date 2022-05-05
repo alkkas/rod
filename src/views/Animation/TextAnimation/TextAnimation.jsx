@@ -16,17 +16,17 @@ export function TextAnimation(props) {
   const positions = [
     {
       top: "25%",
-      left: "10%",
+      left: window.innerWidth > 360 ? "10%" : "10%",
       text: "ИТЕЛИ",
     },
     {
       top: "50%",
-      left: " 50%",
+      left: window.innerWidth > 360 ? "50%" : "10%",
       text: "ИНА",
     },
     {
       top: "75%",
-      left: "95%",
+      left: window.innerWidth > 360 ? "95%" : "35%",
       text: "НА",
     },
   ];

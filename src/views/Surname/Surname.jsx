@@ -8,6 +8,7 @@ export default function Surname() {
   const [data, setData] = useState({});
 
   useEffect(() => {
+    document.title = "РОД - Фамилия";
     const fetchData = async () => {
       const organizations = await getOrganizations();
       setData(organizations);

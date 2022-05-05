@@ -73,6 +73,12 @@ const Container = styled.section`
   min-height: 100vh;
   max-width: 1920px;
   margin: auto;
+  @media screen and (max-width: 768px) {
+    padding: 0.8rem 1.3rem;
+  }
+  @media screen and (max-width: 360px) {
+    padding: 15px;
+  }
 `;
 const Large = styled.h1`
   font-size: 2.5rem;
@@ -112,7 +118,7 @@ html {
 }
 @media screen and (max-width: 360px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 /* Box sizing rules */
