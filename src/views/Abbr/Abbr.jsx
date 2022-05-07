@@ -1,24 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "@components/GlobalStyles.styles";
 import { Header, Content, Loading } from "@components";
-import {
-  AbbrList,
-  AbbrItem,
-  AbbrItemTitle,
-  AbbrSubItem,
-  AbbrLink,
-} from "./Abbr.styles";
+import { AbbrList } from "./Abbr.styles";
 import { disableScroll } from "@services/scrollHelper/scrollHelper";
 import { getAbbr } from "@services";
+import AbbrItem from "./AbbrItem";
 import AbbrPopUp from "./AbbrPopUp";
 
 export default function Abbr() {
   const [data, setData] = useState({});
   const [active, setActive] = useState(false);
   const [currentWord, setCurrentWord] = useState({});
-  const [count, setCount] = useState(
-    parseFloat(localStorage.getItem("count")) || 1
-  );
 
   useEffect(() => {
     document.title = "РОД - Аббревиатура";
@@ -31,11 +23,7 @@ export default function Abbr() {
     fetchData().catch(console.error);
   });
 
-  function handleClick(item, subItem, index) {
-    if (!(index + 1 < count)) {
-      setCount((count) => count + 1);
-      localStorage.setItem("count", JSON.stringify(count + 1));
-    }
+  function showPopUp(item, subItem) {
     setCurrentWord({
       name: data[item].data[subItem].name,
       desc: data[item].data[subItem].desc,
@@ -55,27 +43,7 @@ export default function Abbr() {
             transition={{ duration: 1.3 }}
           >
             {Object.keys(data).map((item) => {
-              return (
-                <AbbrItem key={item}>
-                  <AbbrItemTitle>{data[item].name}</AbbrItemTitle>
-                  <ul>
-                    {Object.keys(data[item].data).map((subItem, index) => {
-                      return index + 1 <= count ? (
-                        <AbbrSubItem key={subItem}>
-                          Д -{" "}
-                          <AbbrLink
-                            onClick={() => handleClick(item, subItem, index)}
-                            visited={index + 1 != count ? true : false}
-                          >
-                            {" "}
-                            {data[item].data[subItem].name}
-                          </AbbrLink>
-                        </AbbrSubItem>
-                      ) : null;
-                    })}
-                  </ul>
-                </AbbrItem>
-              );
+              return <AbbrItem item={item} data={data} showPopUp={showPopUp} />;
             })}
           </AbbrList>
         ) : (

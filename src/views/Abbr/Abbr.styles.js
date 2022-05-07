@@ -14,7 +14,7 @@ const AbbrList = styled(motion.ol)`
     padding: 30px 25px;
   }
 `;
-const AbbrItem = styled.li`
+const AbbrItemWrapper = styled.li`
   counter-increment: my-counter;
 `;
 const AbbrItemTitle = styled.h1`
@@ -134,7 +134,7 @@ const AbbrPopUpTitle = styled(Medium)`
 `;
 export {
   AbbrList,
-  AbbrItem,
+  AbbrItemWrapper,
   AbbrItemTitle,
   AbbrSubItem,
   AbbrLink,

@@ -1,4 +1,9 @@
-import { getOrganizations, getAbbr } from "./dataHelper/dataHelper";
+import {
+  getOrganizations,
+  getAbbr,
+  setLocalCount,
+  getLocalCount,
+} from "./dataHelper/dataHelper";
 import { disableScroll, enableScroll } from "./scrollHelper/scrollHelper";
 import createSymbols from "./Animation/Animation";
 export {
@@ -6,5 +11,7 @@ export {
   getAbbr,
   disableScroll,
   enableScroll,
+  setLocalCount,
+  getLocalCount,
   createSymbols,
 };

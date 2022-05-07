@@ -3,7 +3,7 @@ function getOrganizations() {
   const organizations = {
     1: {
       name: "Русскоязычная общемировая Демографическая Статистика",
-      link: "",
+      link: "https://google.com",
     },
     2: {
       name: "Русское объединение Древо Фамилий",
@@ -45,6 +45,27 @@ function getAbbr() {
         },
       },
     },
+    2: {
+      name: "Русскоязычное объединение Дать",
+      data: {
+        1: {
+          name: "Добро",
+          desc: "нормативно-оценочная категория морального сознания, характеризующая положительные нравственные ценности.",
+        },
+        2: {
+          name: "Деньги",
+          desc: "всеобщий эквивалент, служащий мерой цен и способный непосредственно легко обмениваться на предлагаемые товары или услуги.",
+        },
+        3: {
+          name: "Дело",
+          desc: "работа, занятие, деятельность.",
+        },
+        4: {
+          name: "Дети",
+          desc: "люди в период детства.",
+        },
+      },
+    },
   };
 
   return new Promise((resolve, reject) => {
@@ -53,4 +74,17 @@ function getAbbr() {
     }, 0);
   });
 }
-export { getOrganizations, getAbbr };
+
+function setLocalCount(item, count) {
+  const value = {
+    ...getLocalCount(),
+    [item]: count,
+  };
+  localStorage.setItem("count", JSON.stringify(value));
+}
+
+function getLocalCount() {
+  return JSON.parse(localStorage.getItem("count"));
+}
+
+export { getOrganizations, getAbbr, setLocalCount, getLocalCount };

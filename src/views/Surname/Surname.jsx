@@ -29,7 +29,9 @@ export default function Surname() {
             {Object.keys(data).map((item) => {
               return (
                 <li key={item}>
-                  <SurnameItem>{data[item].name}</SurnameItem>
+                  <SurnameItem href={data[item].link}>
+                    {data[item].name}
+                  </SurnameItem>
                 </li>
               );
             })}
