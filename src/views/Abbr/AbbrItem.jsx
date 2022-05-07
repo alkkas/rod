@@ -8,7 +8,9 @@ import {
 import { getLocalCount, setLocalCount } from "@services";
 
 export default function AbbrItem(props) {
-  const [count, setCount] = useState(getLocalCount()[props.item] || 1);
+  const [count, setCount] = useState(
+    getLocalCount() ? getLocalCount()[props.item] || 1 : 1
+  );
   const data = props.data;
   const item = props.item;
 

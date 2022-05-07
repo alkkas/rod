@@ -43,7 +43,14 @@ export default function Abbr() {
             transition={{ duration: 1.3 }}
           >
             {Object.keys(data).map((item) => {
-              return <AbbrItem item={item} data={data} showPopUp={showPopUp} />;
+              return (
+                <AbbrItem
+                  key={item}
+                  item={item}
+                  data={data}
+                  showPopUp={showPopUp}
+                />
+              );
             })}
           </AbbrList>
         ) : (

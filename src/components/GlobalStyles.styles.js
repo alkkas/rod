@@ -104,7 +104,7 @@ a {
 
 html {
   font-family: "Playfair Display", "Times New Roman", Times, serif;
-  font-size: 48px;
+  font-size: 45px;
 
   color: ${colors.white}
 }
