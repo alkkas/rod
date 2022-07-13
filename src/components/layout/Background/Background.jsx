@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { BackgroundWrapper } from "./Background.styles";
 import BackgroundItem from "./BackgroundItem";
 import { createSymbols } from "@services";
-
-function Background(props) {
+const variants = {
+  visible: { opacity: 0.4 },
+  hidden: { opacity: 0 },
+};
+export const Background = React.memo((props) => {
   const size = window.innerWidth <= 768 ? 40 : 70;
   const symbols = createSymbols(
     window.innerWidth <= 768 ? 20 : 70,
@@ -11,15 +14,9 @@ function Background(props) {
     window.innerHeight,
     size
   );
-  useEffect(() => {
-    console.log(props.frame);
-  });
+
   return (
-    <BackgroundWrapper
-      initial={{ opacity: 0.4 }}
-      animate={props.frame != 1 ? { opacity: 0 } : {}}
-      transition={{ duration: 1.3 }}
-    >
+    <BackgroundWrapper variants={variants}>
       {symbols.map((item, index) => (
         <BackgroundItem
           key={index}
@@ -31,5 +28,4 @@ function Background(props) {
       ))}
     </BackgroundWrapper>
   );
-}
-export { Background };
+});

@@ -3,7 +3,7 @@ function getOrganizations() {
   const organizations = {
     1: {
       name: "Русскоязычная общемировая Демографическая Статистика",
-      link: "https://google.com",
+      link: "",
     },
     2: {
       name: "Русское объединение Древо Фамилий",

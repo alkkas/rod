@@ -7,6 +7,7 @@ export default function Gods() {
   useEffect(() => {
     document.title = "РОД - Божество";
   });
+
   return (
     <Container>
       <Header section="БОЖЕСТВО" />

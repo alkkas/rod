@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   HomeList,
   HomeListItem,
@@ -7,6 +8,7 @@ import {
   HomeContainer,
   HomeHeader,
 } from "./Home.styles";
+
 import { Logo, Replay, Background } from "@components";
 import { LogoAnimation, TextAnimation } from "@views/Animation";
 
@@ -19,7 +21,11 @@ export default function Home() {
     document.title = "РОД";
   });
   return (
-    <HomeContainer>
+    <HomeContainer
+      as={motion.section}
+      animate={frame === 1 || frame === 2 ? "visible" : "hidden"}
+      transition={{ duration: 1.3 }}
+    >
       {/* animation frames */}
       <HomeHeader
         animate={frame === 3 ? { opacity: 1, display: "flex" } : {}}
@@ -29,7 +35,7 @@ export default function Home() {
         <Logo frame={frame} changeFrame={setFrame} ref={logo} />
         <Replay frame={frame} changeFrame={setFrame} />
       </HomeHeader>
-      <Background frame={frame} />
+      <Background />
       <LogoAnimation frame={frame} changeFrame={setFrame} element={logo} />
       <TextAnimation frame={frame} changeFrame={setFrame} element={logo} />
 
@@ -42,7 +48,7 @@ export default function Home() {
         <HomeList>
           <ul>
             {/* styled router links */}
-            <HomeListItem to="/gods">БОЖЕСТВО</HomeListItem>
+            <HomeListItem to="/gods">РОДИТЕЛИ</HomeListItem>
             <HomeListItem to="/abbr">АББРЕВИАТУРА</HomeListItem>
             <HomeListItem to="/surname">ФАМИЛИЯ</HomeListItem>
             <HomeListItem to="/organization">ОРГАНИЗАЦИЯ</HomeListItem>
